@@ -22,7 +22,7 @@
 
 ------
 
-##### Get the required packages from [reqirements.txt](reqirements.txt)
+##### Get the required [packages](/requirements.txt)
 ##### After that, run the following command..
 ```
 $ export API_KEY=pk_3caccf7ef7e045c9976790ce1def9e03 
