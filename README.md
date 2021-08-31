@@ -1,4 +1,4 @@
-# stock-train
+# stock-train-finance
 
 ### This is the redesigned version of C$50 Finance with many personal touches
 > Added a personal Wallet for user
