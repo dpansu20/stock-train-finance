@@ -1,0 +1,30 @@
+{% extends "alllayout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block navtab %}
+<a class="tablink montserrat"href="/">Home</a>
+<a class="tablink montserrat"href="/owned">Owned</a>
+<a class="tablink montserrat"href="/about">About</a>
+<a class="tablink montserrat"href="/buy">Buy</a>
+<a class="tablink montserrat activelink"href="/sell">Sell</a>
+<a class="tablink montserrat"href="/wallet">Wallet</a>
+{% endblock %}
+
+{% block main %}
+<div class="sellform">
+    <form action="/sell" method="post">
+        <select class="form-control" name="symbol">
+            <option disabled selected value>Symbol</option>
+            {% for element in symbols %}
+                <option value="{{ element.symbol }}">{{ element.symbol }}</option>
+            {% endfor %}
+        </select><br/>
+        <input autocomplete="off" autofocus class="sellshares" name="shares" placeholder="Shares" type="number" min="0">
+        <button class="sellbutton" type="submit">Sell</button>
+    </form>
+</div>
+<img src="static/money.png" class="sellbackground">
+{% endblock %}

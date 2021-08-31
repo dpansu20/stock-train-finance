@@ -1,0 +1,88 @@
+{% extends "alllayout.html" %}
+
+{% block script %}
+    <script type="text/javascript">
+        function loanform() {
+            document.getElementById("loanundropped").style.display = 'none';
+            document.getElementById("loandropped").style.display = 'block';
+            document.getElementById("loanform").style.display = 'block';
+        }
+        function closeform() {
+            document.getElementById("loanundropped").style.display = 'block';
+            document.getElementById("loandropped").style.display = 'none';
+            document.getElementById("loanform").style.display = 'none';
+        }
+        function showapo() {
+            document.getElementById("nbundropped").style.display = 'none';
+            document.getElementById("nbdropped").style.display = 'block';
+            document.getElementById("nbapo").style.display = 'block';
+        }
+        function hideapo() {
+            document.getElementById("nbundropped").style.display = 'block';
+            document.getElementById("nbdropped").style.display = 'none';
+            document.getElementById("nbapo").style.display = 'none';
+        }
+    </script>
+{% endblock %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block navtab %}
+<a class="tablink montserrat"href="/">Home</a>
+<a class="tablink montserrat"href="/owned">Owned</a>
+<a class="tablink montserrat"href="/about">About</a>
+<a class="tablink montserrat"href="/buy">Buy</a>
+<a class="tablink montserrat"href="/sell">Sell</a>
+<a class="tablink montserrat activelink"href="/wallet">Wallet</a>
+{% endblock %}
+
+{% block main %}
+<div class="walletbalance">
+    <div class="textlabel1">
+        <span class="textlabel">Amount in Your Wallet :</span><span class="amount">{{ cash }}</span>
+    </div>
+    <div class="textlabel2">
+        <span class="textlabel">Additional Money you can get right now<br/>
+            by selling all your shares :</span><span class="amount">{{ additional }}</span>
+    </div>
+</div>
+
+<div class="addmoney">
+    <span class="headlabel">Or using one of following methods<br/>
+    to add money to the wallet.</span>
+    <div class="takeloan">
+        <div id="loanundropped" class="loanundropped">
+            <button onclick="loanform()"><i class="icofont-hand-drawn-right"></i> Take Loan</button>
+        </div>
+        <div id="loandropped" class="loandropped">
+            <button onclick="closeform()"><i class="icofont-hand-drawn-down"></i> Take Loan</button>
+        </div>
+        <div id="loanform" class="loanform">
+            <form action="/wallet" method="post">
+                <label for="amount">Enter the amount you want to take as loan :</label>
+                <div class="loanpop">
+                    <p class="loanmore">&nbsp;<i class="icofont-info-circle"></i></p>
+                    <p class="loaninfo">You cannot take loan more than $1,500 at a time.</p>
+                </div><br/>
+                <input autocomplete="off" autofocus class="loanamount" name="amount" placeholder="Loan Amount" type="number" min="1" max="1500">
+                <button class="addbutton" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+    <div class="netbanking">
+        <div id="nbundropped" class="nbundropped">
+            <button onclick="showapo()"><i class="icofont-hand-drawn-right"></i> UPI & Net Banking</button>
+        </div>
+        <div id="nbdropped" class="nbdropped">
+            <button onclick="hideapo()"><i class="icofont-hand-drawn-down"></i> UPI & Net Banking</button>
+        </div>
+        <div id="nbapo" class="netbankingapo">
+            <span>This feature is not yet included.<br/>
+            Sorry, for the inconvinience.</span>
+        </div>
+    </div>
+</div>
+<img src="static/wallet.png" class="walletbackground">
+{% endblock %}

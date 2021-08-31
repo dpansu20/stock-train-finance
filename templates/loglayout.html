@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="/static/icofont/icofont.min.css" rel="stylesheet">
+
+    <link href="/static/economy.ico" rel="icon">
+
+    <link href="/static/logstyles.css" rel="stylesheet">
+
+    <title>
+        C$50 Finance: {% block title %}{% endblock %}
+    </title>
+</head>
+<body>
+    <div class="logbrand century">
+        C$50 Finance
+    </div>
+    <div class="inputdiv">
+        <div class="logtitle montserrat">
+            <span>{% block logtitle %}{% endblock %}</span>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                        <div class="logflash montserrat {{ category }}">
+                            {{ message }}
+                        </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="logform">
+            {% block logform %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

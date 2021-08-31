@@ -1,0 +1,52 @@
+{% extends "alllayout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block navtab %}
+<a class="tablink montserrat" href="/">Home</a>
+<a class="tablink montserrat" href="/owned">Owned</a>
+<a class="tablink montserrat" href="/about">About</a>
+<a class="tablink montserrat" href="/buy">Buy</a>
+<a class="tablink montserrat" href="/sell">Sell</a>
+<a class="tablink montserrat" href="/wallet">Wallet</a>
+<a class="tablink montserrat activelink" href="/history">History</a>
+{% endblock %}
+
+{% block main %}
+<div class="historyheadrow">
+    <div class="historytablehead">
+        <span class="historyheadSymbol">Symbol</span>
+        <span class="historyheadShares">Shares</span>
+        <span class="historyheadPrice">Price</span>
+        <span class="historyheadTimes">Transacted</span>
+    </div>
+</div>
+
+{% for row in history %}
+    <div class="historybodyrow">
+        <div class="historytablebody">
+            {% if row.symbol == 'LOAN' %}
+            <span class="historybodySymbol historygray">{{ row.symbol }}</span>
+            {% else %}
+            <span class="historybodySymbol">{{ row.symbol }}</span>
+            {% endif %}
+
+            {% if row.shares > 0 %}
+            <span class="historybodyShares historybought">{{ row.shares }}</span>
+            {% elif row.shares < 0 and row.shares != -999999999 %}
+            <span class="historybodyShares historysold">{{ row.shares }}</span>
+            {% elif row.shares == -999999999 %}
+            <span class="historybodyShares historyloan">###</span>
+            {% else %}
+            <span class="historybodyShares historyloan">{{ row.shares }}</span>
+            {% endif %}
+
+            <span class="historybodyPrice">{{ row.price }}</span>
+            <span class="historybodyTimes">{{ row.times }}</span>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

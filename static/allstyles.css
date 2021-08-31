@@ -1,0 +1,1715 @@
+@font-face {
+	font-family: 'century-gothic';
+	src: url('static/gothic/gothic.eot') format('embedded-opentype'),
+	     url('static/gothic/gothic.woff') format('woff'),
+         url('static/gothic/gothic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-regular-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal, 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-bold-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-bold-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-medium-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-medium-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Medium.ttf') format('truetype');
+    font-weight: medium, 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-light-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-light-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+body
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #06090c;
+    overflow-x: hidden;
+}
+
+.montserrat
+{
+    font-family: 'montserrat', sans-serif;
+	letter-spacing: 0.8px;
+}
+
+.century
+{
+    font-family: 'century-gothic', sans-serif;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.brand
+{
+    font-size: 55px;
+    color: #e1e4fb;
+    padding: 0;
+}
+
+.rightheader
+{
+    height: 65px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.homeflash
+{
+    border-radius: 5px;
+    padding: 17px 80px;
+    margin-top: 15px;
+    margin-right: 25px;
+    font-family: 'montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    opacity: 0.75;
+}
+
+.danger
+{
+    background-color: #d9341d;
+    color: #1a0705;
+}
+
+.success
+{
+    background-color: #6ee254;
+    color: #184510;
+}
+
+.warning
+{
+    background-color: #e88433;
+    color: #3b3211;
+}
+
+.primary
+{
+    background-color: #2aabbc;
+    color: #1b173b;
+}
+
+.usericon
+{
+    padding: 17px 0px;
+    display: inline-block;
+}
+
+.usericon img
+{
+    height: 45px;
+}
+
+.profile button
+{
+    font-size: 30px;
+    font-weight: bold;
+	font-family: 'montserrat', sans-serif;;
+    color: #3d82e9;
+    padding-top: 28px;
+	margin-left: 4.5px;
+    text-decoration: none;
+	background: none;
+	border: none;
+}
+
+.profile button:hover
+{
+    color: #c1c4db;
+}
+
+.profile button:focus
+{
+	outline: none;
+}
+
+.navBar
+{
+    display: flex;
+    justify-content: space-between;
+    width: 82%;
+    margin-top: 20px;
+    margin-bottom: 17px;
+    margin-left: 6%;
+    margin-right: 6%;
+    border-radius: 5px;
+    background-color: #13161a;
+    padding: 9px 3%;
+}
+
+.tabs a
+{
+    text-decoration: none;
+}
+
+.tablink
+{
+    font-weight: bold;
+    color: #e1e4fb;
+    height: 20px;
+    padding-right: 30px;
+    padding-top: 11.5px;
+    display: inline-block;
+}
+
+.activelink
+{
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #20aebb;
+    height: 24px;
+    padding-right: 30px;
+    padding-top: 7.5px;
+    display: inline-block;
+}
+
+.tablink:hover
+{
+    color: #e1e4fb;
+    font-size: 1.3em;
+    padding-top: 3.5px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+.overlay
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+	z-index: 100;
+	transition: all 0.1s ease-in-out;
+}
+
+.profilesection
+{
+    background-color: #06090c;
+	width: auto;
+	height: 100vh;
+    position: absolute;
+	right: 0px;
+}
+
+.profilesection .profileusername
+{
+	background: url("/static/profilepattern.png"), #123;
+	background-size: 25vh;
+	padding: 5vh 0;
+}
+
+.profilesection .profileusername span
+{
+	font-size: 14vh;
+	font-weight: bold;
+	color: #3d82d9;
+	text-align: center;
+	text-shadow: 0 0 60px black;
+}
+
+.profilechange
+{
+	margin-top: 16vh;
+	margin-left: 14%;
+}
+
+.profilechange a
+{
+	text-decoration: none;
+	color: #456;
+	font-size: 4.5vh;
+}
+
+.profilechange a:hover
+{
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+
+.profilehistory
+{
+	margin-top: 1vh;
+	margin-left: 14%;
+}
+
+.profilehistory a
+{
+	text-decoration: none;
+	color: #456;
+	font-size: 4.5vh;
+}
+
+.profilehistory a:hover
+{
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+
+.profilelogout
+{
+	margin-top: 5vh;
+	margin-left: 14%;
+}
+
+.profilelogout a
+{
+	text-decoration: none;
+	color: #456;
+	font-size: 4.5vh;
+}
+
+.profilelogout a:hover
+{
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+
+.profilesection button
+{
+    position: absolute;
+    bottom: 3vh;
+    right: 5%;
+    transition: all 200ms;
+    font-size: 24vh;
+    color: #456;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.profilesection button:hover
+{
+    font-size: 25vh;
+}
+
+.profilesection button:focus
+{
+	outline: none;
+}
+
+.search img
+{
+    height: 30px;
+}
+
+.mainsection
+{
+    width: 88%;
+    margin-left: 6%;
+	margin-bottom: 150px;
+}
+
+img.buybackground
+{
+	position: absolute;
+	left: 35%;
+	top: 180px;
+	height: 65vh;
+	max-width: 55%;
+	z-index: -1;
+}
+
+img.sellbackground
+{
+	position: absolute;
+	left: 35%;
+	top: 180px;
+	height: 65vh;
+	max-width: 55%;
+	z-index: -1;
+}
+
+img.walletbackground
+{
+	position: absolute;
+	left: 35%;
+	top: 180px;
+	height: 65vh;
+	max-width: 55%;
+	z-index: -1;
+}
+
+.buyform
+{
+    margin-top: 10px;
+}
+
+.buyform form input[type=number]
+{
+    padding: 10px 2.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+    width: 14%;
+	margin-top: 10px;
+}
+
+.buyform form input[type=text]
+{
+    padding: 10px 2.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+    width: 14%;
+}
+
+.buyform form button.buybutton
+{
+    height: 42px;
+    width: 9%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+    margin-top: 14px;
+	margin-left: 1%;
+}
+
+.buyform form button.buybutton:focus
+{
+    outline: none;
+}
+
+.buyform form button.buybutton:hover
+{
+    background-color: #1f222b;
+}
+
+.sellform
+{
+    margin-top: 10px;
+}
+
+.sellform form input[type=number]
+{
+    padding: 10px 2.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+    width: 14%;
+	margin-top: 10px;
+}
+
+.sellform form select
+{
+    padding: 10px 2.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+    width: 14%;
+}
+
+.sellform form button.sellbutton
+{
+    height: 42px;
+    width: 9%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+    margin-top: 14px;
+	margin-left: 1%;
+}
+
+.sellform form button.sellbutton:focus
+{
+    outline: none;
+}
+
+.sellform form button.sellbutton:hover
+{
+    background-color: #1f222b;
+}
+
+.walletbalance
+{
+	margin-top: 40px;
+    margin-left: 1%;
+	width: 600px;
+}
+
+.walletbalance .textlabel1
+{
+	padding: 15px 2%;
+	border-left: 6.5px solid #3bc2d6;
+}
+
+.walletbalance .textlabel1 span.textlabel
+{
+	color: #3bc2d6;
+	font-size: 1.4em;
+}
+
+.walletbalance .textlabel1 span.amount
+{
+	color: #e1e4fb;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 1%;
+	background-color: #101316;
+    border-radius: 6px;
+    border: 1px solid #101316;
+	padding: 10px 2%;
+}
+
+.walletbalance .textlabel2
+{
+	padding: 10px 2%;
+	border-left: 6.5px solid #d1b23c;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.walletbalance .textlabel2 span.textlabel
+{
+	color: #d1b23c;
+	font-size: 1.4em;
+	line-height: 40px;
+}
+
+.walletbalance .textlabel2 span.amount
+{
+	color: #e1e4fb;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-left: 1%;
+	background-color: #101316;
+    border-radius: 6px;
+    border: 1px solid #101316;
+	padding: 10px 2%;
+}
+
+.addmoney
+{
+	padding: 15px 1%;
+	border: 1px solid #e1e4fb;
+	border-radius: 8px;
+	width: 700px;
+}
+
+.addmoney span.headlabel
+{
+	color: #8be523;
+	font-size: 1.35em;
+}
+
+.addmoney .takeloan .loanundropped
+{
+	display: block;
+}
+
+.addmoney .takeloan .loanundropped button
+{
+	font-size: 1.4em;
+	font-family: 'montserrat', sans-serif;
+	color: #3bc2cf;
+	background: none;
+	border: none;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.addmoney .takeloan .loanundropped button:hover
+{
+	font-weight: bold;
+}
+
+.addmoney .takeloan .loandropped
+{
+	display: none;
+}
+
+.addmoney .takeloan .loandropped button
+{
+	font-size: 1.4em;
+	font-weight: bold;
+	font-family: 'montserrat', sans-serif;
+	color: #3bc2cf;
+	background: none;
+	border: none;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.addmoney .takeloan .loanundropped button:focus
+{
+	outline: none;
+}
+
+.addmoney .takeloan .loandropped button:focus
+{
+	outline: none;
+}
+
+.loanform
+{
+    margin-top: 10px;
+	margin-left: 7%;
+	display: none;
+}
+
+.loanform form label
+{
+	color: #e1e4fb;
+	font-size: 1.3em;
+}
+
+.loanpop
+{
+	padding: 0px;
+    display:inline-block;
+    position: relative;
+}
+
+.loanpop .loanmore {
+    color: #9bb4d1;
+    cursor: pointer;
+}
+
+.loanpop .loaninfo {
+    top:-999em;
+    left:0;
+    padding: 7px 60%;
+    border: none;
+	border-radius: 4px;
+	width: 1500%;
+    font-size: 1em;
+	font-weight: 500;
+	font-family: 'montserrat', sans-serif;
+    color: #000;
+    background-color: #3bc;
+    position: absolute;
+    z-index:999;
+}
+.loanpop:hover {visibility:visible}
+.loanpop:hover .loaninfo {
+    top: -1.5em;
+	left: 2em;
+}
+
+.loanmore, .loanpop {
+    display: inline;
+}
+
+.loanform form input[type=number]
+{
+    padding: 10px 4.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+    width: 34%;
+}
+
+.loanform form button.addbutton
+{
+    height: 42px;
+    width: 14%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+    margin-top: 10px;
+	margin-left: 1.5%;
+}
+
+.loanform form button.addbutton:focus
+{
+    outline: none;
+}
+
+.loanform form button.addbutton:hover
+{
+    background-color: #1f222b;
+}
+
+.addmoney .netbanking .nbundropped
+{
+	display: block;
+}
+
+.addmoney .netbanking .nbundropped button
+{
+	font-size: 1.4em;
+	font-family: 'montserrat', sans-serif;
+	color: #3bc2cf;
+	background: none;
+	border: none;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.addmoney .netbanking .nbundropped button:hover
+{
+	font-weight: bold;
+}
+
+.addmoney .netbanking .nbdropped
+{
+	display: none;
+}
+
+.addmoney .netbanking .nbdropped button
+{
+	font-size: 1.4em;
+	font-weight: bold;
+	font-family: 'montserrat', sans-serif;
+	color: #3bc2cf;
+	background: none;
+	border: none;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.addmoney .netbanking .nbundropped button:focus
+{
+	outline: none;
+}
+
+.addmoney .netbanking .nbdropped button:focus
+{
+	outline: none;
+}
+
+
+.addmoney .netbanking .netbankingapo
+{
+	margin-top: 10px;
+	margin-left: 7%;
+	color: #e1e4fb;
+	font-size: 1.3em;
+	visibility: visible;
+	height: auto;
+	display: none;
+}
+
+.quotesection
+{
+	display: flex;
+	margin-top: 40px;
+	margin-left: 3%;
+	margin-right: 3%;
+}
+
+.quotesearchdiv
+{
+	width: 47%;
+	margin-right: 3%
+}
+
+.searchbyname
+{
+	padding: 15px 2%;
+	border: 1px solid #13161a;
+	border-radius: 8px;
+}
+
+.searchbyname span
+{
+	font-size: 1.4em;
+	color: #b1b4cb;
+}
+
+.searchbyname a
+{
+	text-decoration: none;
+	color: #e61b43;
+	font-size: 1.25em;
+}
+
+.searchbyname a:hover
+{
+	font-weight: bold;
+}
+
+.infopop
+{
+	padding: 0px;
+    display:inline-block;
+    position: relative;
+}
+
+.infopop .more {
+    color: #c1b49b;
+    cursor: pointer;
+}
+
+.infopop .info {
+    top:-999em;
+    left:0;
+    padding: 5px 60%;
+    border: none;
+	border-radius: 5px;
+	width: 1500%;
+	box-shadow: inset 0 0 4px #210;
+    font-size: 0.95em;
+	font-weight: 500;
+	font-family: 'montserrat', sans-serif;
+    color: #000;
+    background-color: #db4;
+    position: absolute;
+    z-index:999;
+}
+.infopop:hover {visibility:visible}
+.infopop:hover .info {
+    top: -1em;
+	left: 2em;
+}
+
+.more, .infopop {
+    display: inline;
+}
+
+.quotesearchdiv form
+{
+	margin-top: 15px;
+	margin-right: 3%;
+	padding: 5px 2%;
+}
+
+.quotesearchdiv form label
+{
+	color: #e1e4fb;
+	font-size: 1.3em;
+}
+
+.quotesearchdiv form input[type=text]
+{
+	padding: 10px 3.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+	margin-top: 10px;
+}
+
+.quotesearchdiv form button.quotebutton
+{
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+    margin-left: 1.5%;
+	padding: 12px 3%;
+}
+
+.quotesearchdiv form button.quotebutton:focus
+{
+    outline: none;
+}
+
+.quotesearchdiv form button.quotebutton:hover
+{
+    background-color: #1f222b;
+}
+
+.quoteshowdiv
+{
+	width: 50%;
+}
+
+.nothingquote
+{
+	margin-left: 3%;
+	border-left: 6px solid #d1b23c;
+	padding: 15px 2.5%;
+}
+
+.nothingquote span
+{
+	color: #d1b23c;
+	font-size: 1.4em;
+}
+
+.showstocktop
+{
+	margin: 25px 5% 5px 5%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.showstockbottom
+{
+	margin: 0px 5%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.showstocksymbol
+{
+	color: #e1e4fb;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.showstockprice
+{
+	font-size: 3em;
+}
+
+.showstockname
+{
+	color: #e1e4fb;
+	font-size: 1.3em;
+}
+
+.showstockchange
+{
+	font-size: 1.3em;
+}
+
+.changeprofile
+{
+	margin-top: 15px;
+    margin-left: 1%;
+}
+
+.changeprofile span.changelabel
+{
+	color: #d1b23c;
+	font-size: 1.35em;
+}
+
+.changeprofile .changeusername .userundropped
+{
+	display: block;
+}
+
+.changeprofile .changeusername .userundropped button
+{
+	font-size: 1.4em;
+	font-family: 'montserrat', sans-serif;
+	color: #3bc2cf;
+	background: none;
+	border: none;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.changeprofile .changeusername .userundropped button:hover
+{
+	font-weight: bold;
+}
+
+.changeprofile .changeusername .userdropped
+{
+	display: none;
+}
+
+.changeprofile .changeusername .userdropped button
+{
+	font-size: 1.4em;
+	font-weight: bold;
+	font-family: 'montserrat', sans-serif;
+	color: #3bc2cf;
+	background: none;
+	border: none;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.changeprofile .changeusername .userundropped button:focus
+{
+	outline: none;
+}
+
+.changeprofile .changeusername .userdropped button:focus
+{
+	outline: none;
+}
+
+.userform
+{
+    margin-top: 15px;
+	margin-left: 4%;
+	display: none;
+}
+
+.userform form label
+{
+	color: #e1e4fb;
+	font-size: 1.3em;
+}
+
+.userform form input[type=text]
+{
+    padding: 10px 3.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.userform form input[type=password]
+{
+    padding: 10px 3.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+	margin-top: 10px;
+}
+
+.userform form button.changebutton
+{
+    height: 46px;
+    width: 9%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+    margin-left: 1.5%;
+}
+
+.userform form button.changebutton:focus
+{
+    outline: none;
+}
+
+.userform form button.changebutton:hover
+{
+    background-color: #1f222b;
+}
+
+.changeprofile .changepassword .passundropped
+{
+	display: block;
+}
+
+.changeprofile .changepassword .passundropped button
+{
+	font-size: 1.4em;
+	font-family: 'montserrat', sans-serif;
+	color: #3bc2cf;
+	background: none;
+	border: none;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.changeprofile .changepassword .passundropped button:hover
+{
+	font-weight: bold;
+}
+
+.changeprofile .changepassword .passdropped
+{
+	display: none;
+}
+
+.changeprofile .changepassword .passdropped button
+{
+	font-size: 1.4em;
+	font-weight: bold;
+	font-family: 'montserrat', sans-serif;
+	color: #3bc2cf;
+	background: none;
+	border: none;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.changeprofile .changepassword .passundropped button:focus
+{
+	outline: none;
+}
+
+.changeprofile .changepassword .passdropped button:focus
+{
+	outline: none;
+}
+
+.passform
+{
+    margin-top: 15px;
+	margin-left: 4%;
+	display: none;
+}
+
+.passform form label
+{
+	color: #e1e4fb;
+	font-size: 1.3em;
+}
+
+.passform form input[type=password]
+{
+    padding: 10px 3.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.passform form button.changebutton
+{
+    height: 46px;
+    width: 9%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+	margin-left: 1.5%;
+}
+
+.passform form button.changebutton:focus
+{
+    outline: none;
+}
+
+.passform form button.changebutton:hover
+{
+    background-color: #1f222b;
+}
+
+
+.changeprofile .deleteaccount .delundropped
+{
+	display: block;
+}
+
+.changeprofile .deleteaccount .delundropped button
+{
+	font-size: 1.4em;
+	font-family: 'montserrat', sans-serif;
+	color: #e61b43;
+	background: none;
+	border: none;
+	margin-top: 35px;
+	cursor: pointer;
+}
+
+.changeprofile .deleteaccount .delundropped button:hover
+{
+	font-weight: bold;
+}
+
+.changeprofile .deleteaccount .deldropped
+{
+	display: none;
+}
+
+.changeprofile .deleteaccount .deldropped button
+{
+	font-size: 1.4em;
+	font-weight: bold;
+	font-family: 'montserrat', sans-serif;
+	color: #e61b43;
+	background: none;
+	border: none;
+	margin-top: 35px;
+	cursor: pointer;
+}
+
+.changeprofile .deleteaccount .delundropped button:focus
+{
+	outline: none;
+}
+
+.changeprofile .deleteaccount .deldropped button:focus
+{
+	outline: none;
+}
+
+.delform
+{
+    margin-top: 15px;
+	margin-left: 4%;
+	display: none;
+}
+
+.delform form label
+{
+	color: #e1e4fb;
+	font-size: 1.3em;
+}
+
+.delform form input[type=password]
+{
+    padding: 10px 3.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #1f222b;
+    border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.delform form button.changebutton
+{
+    height: 46px;
+    width: 9%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+	margin-left: 1.5%;
+}
+
+.delform form button.changebutton:focus
+{
+    outline: none;
+}
+
+.delform form button.changebutton:hover
+{
+    background-color: #1f222b;
+}
+
+.ownheadrow
+{
+    width: 100%;
+    display: flex;
+}
+
+.owntablehead
+{
+    width: 69%;
+    height: 30px;
+    background-color: #13161a;
+    border-radius: 6px;
+    padding: 9px 3%;
+}
+
+.owntablehead span
+{
+    position: absolute;
+    padding-top: 7px;
+    display: inline-block;
+    color: #e1e4fb;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+span.ownheadSymbol
+{
+    left: 9%;
+}
+
+span.ownheadName
+{
+    left: 16.5%;
+}
+
+span.ownheadShares
+{
+    left: 45%;
+}
+
+span.ownheadPrice
+{
+    left: 51.5%;
+}
+
+span.ownheadTOTAL
+{
+    left: 62%;
+}
+
+.owntrade
+{
+    text-align: center;
+    width: 19%;
+    height: 20px;
+    padding: 10px 3%;
+	padding-top: 17.5px;
+    color: #8f96a1;
+}
+
+.ownbodyrow
+{
+    width: 100%;
+    display: flex;
+    margin-top: 6px;
+}
+
+.owntablebody
+{
+    width: 69%;
+    height: 30px;
+    background-color: none;
+    padding: 9px 3%;
+}
+
+.owntablebody span.ownchange
+{
+	position: absolute;
+	padding-top: 10px;
+	display: inline-block;
+	left: 7.2%;
+}
+
+.owntablebody img
+{
+	position: absolute;
+	padding-top: 13px;
+	display: inline-block;
+	height: 17px;
+	left: 7.34%;
+}
+
+.owntablebody span
+{
+    position: absolute;
+    padding-top: 10px;
+    display: inline-block;
+    color: #e1e4fb;
+    font-size: 1.25em;
+}
+
+span.ownbodySymbol
+{
+    left: 9%;
+}
+
+span.ownbodyName
+{
+    left: 16.5%;
+}
+
+span.ownbodyShares
+{
+    left: 45%;
+}
+
+span.ownbodyPrice
+{
+    left: 51.5%;
+}
+
+span.ownbodyTOTAL
+{
+    left: 62%;
+}
+
+.owntradebuttons
+{
+    width: 25%;
+    margin-top: 8px;
+    display: flex;
+    visibility: visible;
+}
+
+.owntradebuttons button.ownbuymore
+{
+    height: 40px;
+    width: 58%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    margin-left: 2%;
+}
+
+.owntradebuttons button.ownsellsome
+{
+    height: 40px;
+    width: 38%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    margin-left: 2%;
+}
+
+.owntradebuttons button.ownbuymore:focus
+{
+    outline: none;
+}
+
+.owntradebuttons button.ownsellsome:focus
+{
+    outline: none;
+}
+
+.owntradebuttons button.ownbuymore:hover
+{
+    background-color: #1f222b;
+}
+
+.owntradebuttons button.ownsellsome:hover
+{
+    background-color: #1f222b;
+}
+
+.closeform
+{
+    margin-left: 5%;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+	margin-top: 6px;
+    color: #8f96a1;
+}
+
+.closeform:hover
+{
+    color: white;
+}
+
+.ownbuyform
+{
+    position: absolute;
+    visibility: hidden;
+    width: 25%;
+    margin-top: 8px;
+    left: 75%;
+}
+
+.ownbuyform form
+{
+    display: flex;
+}
+
+.ownbuyform form input[type=number]
+{
+    padding-left: 2.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #3d82e9;
+    border-radius: 5px;
+    margin-left: -10%;
+    width: 48.2%;
+}
+
+.ownbuyform form button.ownbuy
+{
+    height: 40px;
+    width: 33.5%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+    margin-left: 1.8%;
+}
+
+.ownbuyform form button.ownbuy:focus
+{
+    outline: none;
+}
+
+.ownbuyform form button.ownbuy:hover
+{
+    background-color: #1f222b;
+}
+
+.ownsellform
+{
+    position: absolute;
+    visibility: hidden;
+    width: 25%;
+    margin-top: 8px;
+    left: 75%;
+}
+
+.ownsellform form
+{
+    display: flex;
+}
+
+.ownsellform form input[type=number]
+{
+    padding-left: 2.5%;
+    font-family: 'montserrat', sans-serif;
+    font-size: 1.15em;
+    border: 2px solid #3d82e9;
+    border-radius: 5px;
+    margin-left: -10%;
+    width: 48.2%;
+}
+
+.ownsellform form button.ownsell
+{
+    height: 40px;
+    width: 33.5%;
+    background-color: #13161a;
+    border-radius: 6px;
+    border: 1px solid #13161a;
+    color: #e1e4fb;
+    font-size: 1.1em;
+    font-family: 'montserrat', sans-serif;
+    margin-left: 1.8%;
+}
+
+.ownsellform form button.ownsell:focus
+{
+    outline: none;
+}
+
+.ownsellform form button.ownsell:hover
+{
+    background-color: #1f222b;
+}
+
+.owntablecash
+{
+    width: 69%;
+    height: 30px;
+    background-color: #1f222b;
+    border-radius: 6px;
+    padding: 9px 3%;
+    margin-top: 15px;
+}
+
+.owntablecash span
+{
+    position: absolute;
+    padding-top: 7px;
+    display: inline-block;
+    color: #e1e4fb;
+    font-size: 1.2em;
+}
+
+span.owncashCASH
+{
+    left: 9%;
+}
+
+span.owncashCash
+{
+    left: 62%;
+}
+
+.owntabletotal
+{
+	position: absolute;
+    width: 100%;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.owntabletotal span
+{
+    position: absolute;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 2.5%;
+    width: 10%;
+    background-color: #13161a;
+    border-radius: 6px;
+    display: inline-block;
+    color: #e1e4fb;
+    font-weight: bold;
+    font-size: 1.2em;
+	margin-bottom: 20px;
+}
+
+span.owntotal
+{
+    left: 53.5%;
+}
+
+.historyheadrow
+{
+    width: 100%;
+    display: flex;
+}
+
+.historytablehead
+{
+    width: 59%;
+    height: 30px;
+    background-color: #13161a;
+    border-radius: 6px;
+    padding: 9px 3%;
+}
+
+.historytablehead span
+{
+    position: absolute;
+    padding-top: 7px;
+    display: inline-block;
+    color: #e1e4fb;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+span.historyheadSymbol
+{
+    left: 9%;
+}
+
+span.historyheadShares
+{
+    left: 18%;
+}
+
+span.historyheadPrice
+{
+    left: 25%;
+}
+
+span.historyheadTimes
+{
+    left: 35%;
+}
+
+.historybodyrow
+{
+    width: 100%;
+    display: flex;
+    margin-top: 6px;
+}
+
+.historytablebody
+{
+    width: 69%;
+    height: 30px;
+    background-color: none;
+    padding: 9px 3%;
+}
+
+.historytablebody span
+{
+    position: absolute;
+    padding-top: 10px;
+    display: inline-block;
+    color: #e1e4fb;
+    font-size: 1.25em;
+}
+
+span.historybodySymbol
+{
+    left: 9%;
+}
+
+span.historybodyShares
+{
+    left: 18%;
+}
+
+span.historybodyPrice
+{
+    left: 25%;
+}
+
+span.historybodyTimes
+{
+    left: 35%;
+}
+
+span.historybought
+{
+	color: #dbc533;
+}
+
+span.historysold
+{
+	color: #3bc2cf;
+}
+
+span.historyloan
+{
+	color: #e61b43;
+}
+
+span.historygray
+{
+	color: #4e3d47;
+}
+
+
+
+
+
+
+
+span.increasecolor
+{
+    color: #66ea32;
+}
+
+span.decreasecolor
+{
+    color: #ea4832;
+}
+
+span.nochangecolor
+{
+    color: #ffcc33;
+}
+
+.footerdiv
+{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #e1e4fb;
+    letter-spacing: 1px;
+	background-color: #06090c;
+	padding-bottom: 20px;
+	padding-top: 10px;
+}
+
+.footerdiv a
+{
+    color: #607ac5;
+}

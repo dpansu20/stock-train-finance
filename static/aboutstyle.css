@@ -1,0 +1,529 @@
+@font-face {
+	font-family: 'century-gothic';
+	src: url('/static/gothic/gothic.eot') format('embedded-opentype'),
+	     url('/static/gothic/gothic.woff') format('woff'),
+         url('/static/gothic/gothic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-regular-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal, 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-bold-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-bold-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-medium-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-medium-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Medium.ttf') format('truetype');
+    font-weight: medium, 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-light-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-light-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+*
+{
+    margin: 0;
+}
+
+body
+{
+    background: url("/static/homebackground.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.head
+{
+    width: 82%;
+    margin-left: 9%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about
+{
+    font-weight: bold;
+    font-family: 'montserrat', sans-serif;
+    font-size: 15vh;
+    color: #e1e4fb;
+    padding-top: 4vh;
+    border-bottom: 3vh solid #d1b23c;
+}
+
+/* .brand
+{
+    font-family: 'century-gothic', sans-serif;
+    font-size: 12vh;
+    color: #81c4eb;
+    padding-top: 8vh;
+} */
+
+.main
+{
+    width: 82%;
+    margin-left: 9%;
+    display: grid;
+    margin-bottom: 20vh;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.info
+{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-top: 9vh;
+    background-color: rgba(10, 30, 50, 0.7);
+    border-radius: 10px;
+    padding: 3vh 2%;
+}
+
+.info h2
+{
+    font-family: 'montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 5vh;
+    color: #e1e4fb;
+}
+
+.info p
+{
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.3vh;
+    color: #e1e4fb;
+}
+
+.info span.html
+{
+    font-family: 'montserrat', sans-serif;
+    font-size: 4vh;
+    color: #ca6a1c;
+}
+
+.info span.css
+{
+    font-family: 'montserrat', sans-serif;
+    font-size: 4vh;
+    color: #61b4eb;
+}
+
+.info span.js
+{
+    font-family: 'montserrat', sans-serif;
+    font-size: 4vh;
+    color: #e1c24c;
+}
+
+.info span.sql
+{
+    font-family: 'montserrat', sans-serif;
+    font-size: 4vh;
+    color: #cb2db9;
+}
+
+.info span.python
+{
+    font-family: 'montserrat', sans-serif;
+    font-size: 4vh;
+    color: #7c55fc;
+}
+
+.original
+{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    color: #e1e4fb;
+    font-family: 'montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 7vh;
+    padding: 3vh 2%;
+}
+
+.originalleft
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.originalright
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.originalcenter
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.personal
+{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    color: #e1e4fb;
+    font-family: 'montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 7vh;
+    padding: 3vh 2%;
+}
+
+.personalleft
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.personalright
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.personalcenter
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.buy
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d1b23c;
+    border-left-color: #d1b23c;
+}
+
+.sell
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d86847;
+    border-left-color: #d86847;
+    /* color: #92e13c;
+    border-left-color: #92e13c; */
+}
+
+.quote
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #3cb2d1;
+    border-left-color: #3cb2d1;
+}
+
+.log
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #dad24c;
+    border-left-color: #dad24c;
+    margin-top: 4vh;
+}
+
+.register
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d85ca2;
+    border-left-color: #d85ca2;
+    margin-top: 4vh;
+}
+
+.history
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d1b23c;
+    border-left-color: #d1b23c;
+    margin-top: 4vh;
+}
+
+.wallet
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d86847;
+    border-left-color: #d86847;
+}
+
+.change
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d85ca2;
+    border-left-color: #d85ca2;
+    margin-top: 4vh;
+}
+
+.username
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #dad24c;
+    border-left-color: #dad24c;
+}
+
+.profile
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d1b23c;
+    border-left-color: #d1b23c;
+    margin-top: 4vh;
+}
+
+
+.loan
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #3cb2d1;
+    border-left-color: #3cb2d1;
+    margin-top: 4vh;
+}
+
+.password
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #9c65fd;
+    border-left-color: #9c65fd;
+}
+
+.home
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #3cb2d1;
+    border-left-color: #3cb2d1;
+    margin-top: 4vh;
+}
+
+.bsindex
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #3cb2d1;
+    border-left-color: #3cb2d1;
+    margin-top: 4vh;
+}
+
+.ui
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d86847;
+    border-left-color: #d86847;
+    margin-top: 4vh;
+}
+
+.apology
+{
+    padding: 2vh 4%;
+    border-left-style: solid;
+    border-left-width: 10px;
+    font-family: 'montserrat', sans-serif;
+    font-size: 3.7vh;
+    font-weight: 500;
+    color: #d1b23c;
+    border-left-color: #d1b23c;
+    margin-top: 4vh;
+}
+
+@media screen and (max-height: 720px) {
+    .about
+    {
+        font-size: 12vh;
+        color: #e1e4fb;
+        padding-top: 3vh;
+        border-bottom: 1.6vh solid #d1b23c;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .head
+    {
+        width: 88%;
+        margin-left: 6%;
+        display: flex;
+        justify-content: center;
+    }
+    .main
+    {
+        width: 88%;
+        margin-left: 6%;
+        display: inherit;
+        margin-bottom: 12vh;
+    }
+    .sell
+    {
+        margin-top: 4vh;
+    }
+    .quote
+    {
+        margin-top: 4vh;
+    }
+    .password
+    {
+        margin-top: 4vh;
+    }
+    .username
+    {
+        margin-top: 4vh;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .head
+    {
+        width: 88%;
+        margin-left: 6%;
+        display: flex;
+        justify-content: center;
+    }
+    .main
+    {
+        width: 88%;
+        margin-left: 6%;
+        display: inherit;
+        margin-bottom: 12vh;
+    }
+    .info
+    {
+        margin-top: 5vh;
+        border-radius: 14px;
+        padding: 3vh 6%;
+    }
+    .info h2
+    {
+        font-size: 5.3vh;
+        text-align: center;
+        line-height: 6.5vh;
+    }
+    .info p
+    {
+        font-size: 4vh;
+        text-align: center;
+        line-height: 5.2vh;
+    }
+    .info span
+    {
+        font-size: 4vh;
+    }
+    .original
+    {
+        font-size: 5.5vh;
+        padding: 3vh 6%;
+        text-align: center;
+    }
+    .personal
+    {
+        font-size: 5.5vh;
+        padding: 3vh 6%;
+        text-align: center;
+    }
+    .sell
+    {
+        margin-top: 4vh;
+    }
+    .quote
+    {
+        margin-top: 4vh;
+    }
+    .password
+    {
+        margin-top: 4vh;
+    }
+    .username
+    {
+        margin-top: 4vh;
+    }
+}

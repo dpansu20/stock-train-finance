@@ -1,0 +1,27 @@
+{% extends "loglayout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block logtitle %}
+    Register
+{% endblock %}
+
+{% block logform %}
+    <form action="/register" method="post">
+        <div class="logusernameinput">
+            <input autocomplete="off" autofocus name="username" placeholder="Username" type="text">
+        </div>
+        <div class="logpasswordinput">
+            <input name="password" placeholder="Password" type="password">
+        </div>
+        <div class="logpasswordinput">
+            <input name="confirmation" placeholder="Password (Again)" type="password">
+        </div>
+        <div class="logregisterlink">
+            <a href="/login">Already Registered? Log In</a>
+        </div>
+        <button class="logsubmitbutton convection" type="submit">Submit</button>
+    </form>
+{% endblock %}

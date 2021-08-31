@@ -1,0 +1,113 @@
+{% extends "alllayout.html" %}
+
+{% block title %}
+    Owned
+{% endblock %}
+
+{% block navtab %}
+<a class="tablink montserrat"href="/">Home</a>
+<a class="tablink montserrat activelink"href="/owned">Owned</a>
+<a class="tablink montserrat"href="/about">About</a>
+<a class="tablink montserrat"href="/buy">Buy</a>
+<a class="tablink montserrat"href="/sell">Sell</a>
+<a class="tablink montserrat"href="/wallet">Wallet</a>
+{% endblock %}
+
+{% block main %}
+<div class="ownheadrow">
+    <div class="owntablehead">
+        <span class="ownheadSymbol">Symbol</span>
+        <span class="ownheadName">Name</span>
+        <span class="ownheadShares">Shares</span>
+        <span class="ownheadPrice">Price</span>
+        <span class="ownheadTOTAL">TOTAL</span>
+    </div>
+    <div class="owntrade">
+        Trade
+    </div>
+</div>
+
+{% for row in owned %}
+    <div class="ownbodyrow">
+        <div class="owntablebody">
+
+            {% if row.change > 0 %}
+            <span class="ownchange increasecolor" style="font-size: 1.3em;"><i class="icofont-caret-up"></i></span>
+            {% elif row.change < 0 %}
+            <span class="ownchange decreasecolor" style="font-size: 1.3em;"><i class="icofont-caret-down"></i></span>
+            {% else %}
+            <img src="/static/nochange.png">
+            {% endif %}
+
+            <span class="ownbodySymbol">{{ row.symbol }}</span>
+            <span class="ownbodyName">{{ row.name }}</span>
+            <span class="ownbodyShares">{{ row.shares }}</span>
+
+            {% if row.change > 0 %}
+            <span class="ownbodyPrice increasecolor">{{ row.price }}</span>
+            {% elif row.change < 0 %}
+            <span class="ownbodyPrice decreasecolor">{{ row.price }}</span>
+            {% else %}
+            <span class="ownbodyPrice nochangecolor">{{ row.price }}</span>
+            {% endif %}
+
+            <span class="ownbodyTOTAL">{{ row.total }}</span>
+        </div>
+        <div id="owntradebuttons{{ row.symbol }}" class="owntradebuttons">
+            <button type="button" name="ownbuymore" class="ownbuymore montserrat" onclick="{{ row.symbol }}buyform()">Buy More</button>
+            <button type="button" name="ownsellsome" class="ownsellsome montserrat" onclick="{{ row.symbol }}sellform()">Sell</button>
+        </div>
+        <div id="ownbuyform{{ row.symbol }}" class="ownbuyform">
+            <form action="/buymore" method="post">
+                <input autocomplete="off" autofocus class="ownbuyshares" name="shares" placeholder="Shares" type="number" min="1">
+                <button class="ownbuy" type="submit">Buy</button>
+                <a class="closeform" href="" onclick="{{ row.name }}closebuyform()">&times;</a>
+                <input class="ownbuysymbol" type="text" name="symbol" value="{{ row.symbol }}" style="visibility: hidden; width: 14%">
+            </form>
+        </div>
+        <div id="ownsellform{{ row.symbol }}" class="ownsellform">
+            <form action="/sellsome" method="post">
+                <input autocomplete="off" autofocus class="ownsellshares" name="shares" placeholder="Shares" type="number" min="0">
+                <button class="ownsell" type="submit">Sell</button>
+                <a class="closeform" href="" onclick="{{ row.name }}closesellform()">&times;</a>
+                <input class="ownsellsymbol" type="text" name="symbol" value="{{ row.symbol }}" style="visibility: hidden; width: 14%">
+            </form>
+        </div>
+
+        <script type="text/javascript">
+            function {{ row.symbol }}buyform() {
+                document.getElementById("owntradebuttons{{ row.symbol }}").style.visibility = 'hidden';
+                document.getElementById("ownbuyform{{ row.symbol }}").style.visibility = 'visible';
+            }
+
+            function {{ row.symbol }}sellform() {
+                document.getElementById("owntradebuttons{{ row.symbol }}").style.visibility = 'hidden';
+                document.getElementById("ownsellform{{ row.symbol }}").style.visibility = 'visible';
+            }
+
+            function {{ row.symbol }}closebuyform() {
+                document.getElementById("owntradebuttons{{ row.symbol }}").style.visibility = 'visible';
+                document.getElementById("ownbuyform{{ row.symbol }}").style.visibility = 'hidden';
+            }
+
+            function {{ row.symbol }}closesellform() {
+                document.getElementById("owntradebuttons{{ row.symbol }}").style.visibility = 'visible';
+                document.getElementById("ownsellform{{ row.symbol }}").style.visibility = 'hidden';
+            }
+        </script>
+
+    </div>
+{% endfor %}
+
+<div class="owncashrow">
+    <div class="owntablecash">
+        <span class="owncashCASH">CASH</span>
+        <span class="owncashCash">{{ cash }}</span>
+    </div>
+</div>
+<div class="owntotalrow">
+    <div class="owntabletotal">
+        <span class="owntotal">{{ total }}</span>
+    </div>
+</div>
+{% endblock %}

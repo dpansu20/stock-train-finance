@@ -1,0 +1,92 @@
+@font-face {
+	font-family: 'century-gothic';
+	src: url('/static/gothic/gothic.eot') format('embedded-opentype'),
+	     url('/static/gothic/gothic.woff') format('woff'),
+         url('/static/gothic/gothic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-medium-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-medium-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+*
+{
+    margin: 0;
+}
+
+body
+{
+    background: url("/static/errorbackground.jpg");
+	background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.errormessage
+{
+    margin-left: 7%;
+    margin-right: 15%;
+}
+
+.errormessage h2
+{
+    font-family: 'montserrat', sans-serif;
+    font-size: 25vh;
+    font-weight: 500;
+    letter-spacing: 0.4vh;
+    color: #eee;
+    padding-top: 10vh;
+}
+
+.errormessage h4
+{
+    font-size: 9vh;
+    color: #eee;
+    font-weight: 500;
+    font-family: arial, 'century-gothic', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 0 0 40px black;
+}
+
+.errormessage p
+{
+    color: #fff;
+    font-size: 3vh;
+    margin-top: 15vh;
+    letter-spacing: 0.3vh;
+    font-family: arial, 'century-gothic', sans-serif;
+    text-transform: uppercase;
+}
+
+.errormessage .homebutton
+{
+    margin-top: 4vh;
+}
+
+.errormessage .homebutton a
+{
+    padding: 10px 50px;
+    background: #bf5209;
+    color: #112;
+    text-decoration: none;
+    font-family: arial, 'century-gothic', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    opacity: 0.7;
+}
+
+.errormessage .homebutton a:hover
+{
+    background: #b0364d;
+    transition: all 0.2s ease;
+}

@@ -1,0 +1,102 @@
+{% extends "alllayout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block navtab %}
+<a class="tablink montserrat" href="/">Home</a>
+<a class="tablink montserrat" href="/owned">Owned</a>
+<a class="tablink montserrat" href="/about">About</a>
+<a class="tablink montserrat" href="/buy">Buy</a>
+<a class="tablink montserrat" href="/sell">Sell</a>
+<a class="tablink montserrat" href="/wallet">Wallet</a>
+<a class="tablink montserrat activelink" href="/quote">Quote</a>
+{% endblock %}
+
+{% block main %}
+<div class="quotesection">
+    <div class="quotesearchdiv">
+        <div class="searchbyname">
+            <span>These are the sites you can visit to get the Stock Symbol of the desired Company.</span><br/><br/>
+            <a href="https://stocks.tradingcharts.com/stocks/symbols/s">tradingcharts.com</a><br/>
+            <a href="https://www.marketwatch.com/tools/quotes/lookup.asp">marketwatch.com</a><br/>
+            <a href="https://finance.yahoo.com/lookup/">finance.yahoo.com</a><br/>
+            <a href="https://iexcloud.io/console/search">iexcloud.io</a>
+            <div class="infopop">
+                <p class="more">&nbsp;<i class="icofont-info-circle"></i></p>
+                <p class="info">You will have to register your account on this site.</p>
+            </div><br/>
+        </div>
+        <form action="/quote" method="post">
+            <label for="symbol">Enter the symbol of the compay you want to get the details about :</label><br/>
+            <input autocomplete="off" autofocus class="quotesymbol" name="symbol" placeholder="Symbol" type="text">
+            <button class="quotebutton" type="submit">Quote</button>
+        </form>
+    </div>
+    <div class="quoteshowdiv">
+        {% if not symbols %}
+            <div class="nothingquote">
+                <span>Nothing to Show here.<br/>
+                <i class="icofont-search-stock"></i>  Search something.</span>
+            </div>
+        {% else %}
+
+            {% if symbols.change > 0 %}
+            <div class="showstocktop">
+                <div class="showstocksymbol">
+                    <span>{{ symbols.symbol }}</span><span class="increasecolor" style="font-size: 1em;"><i class="icofont-caret-up"></i></span>
+                </div>
+                <div class="showstockprice increasecolor">
+                    <span class="increasecolor">$ {{ symbols.price }}</span>
+                </div>
+            </div>
+            <div class="showstockbottom">
+                <div class="showstockname">
+                    <span>{{ symbols.name }}</span>
+                </div>
+                <div class="showstockchange increasecolor">
+                    <span class="increasecolor">({{ symbols.change }})</span>
+                </div>
+            </div>
+            {% elif symbols.change < 0 %}
+            <div class="showstocktop">
+                <div class="showstocksymbol">
+                    <span>{{ symbols.symbol }}</span><span class="decreasecolor" style="font-size: 1em;"><i class="icofont-caret-down"></i></span>
+                </div>
+                <div class="showstockprice increasecolor">
+                    <span class="decreasecolor">$ {{ symbols.price }}</span>
+                </div>
+            </div>
+            <div class="showstockbottom">
+                <div class="showstockname">
+                    <span>{{ symbols.name }}</span>
+                </div>
+                <div class="showstockchange increasecolor">
+                    <span class="decreasecolor">({{ symbols.change }})</span>
+                </div>
+            </div>
+            {% else %}
+            <div class="showstocktop">
+                <div class="showstocksymbol">
+                    <span>{{ symbols.symbol }}</span><span class="nochangecolor" style="font-size: 1em;"><i class="icofont-expand-alt"></i></span>
+                </div>
+                <div class="showstockprice increasecolor">
+                    <span class="nochangecolor">$ {{ symbols.price }}</span>
+                </div>
+            </div>
+            <div class="showstockbottom">
+                <div class="showstockname">
+                    <span>{{ symbols.name }}</span>
+                </div>
+                <div class="showstockchange increasecolor">
+                    <span class="nochangecolor">({{ symbols.change }})</span>
+                </div>
+            </div>
+            {% endif %}
+
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

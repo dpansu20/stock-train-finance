@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="/static/icofont/icofont.min.css" rel="stylesheet">
+
+    <link href="/static/economy.ico" rel="icon">
+
+    <link href="/static/homestyle.css" rel="stylesheet">
+
+    <title>
+        C$50 Finance: Home
+    </title>
+</head>
+<body>
+    <div class="header">
+        <div class="brand century">
+            C$50 Finance
+        </div>
+        <div class="rightheader">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                        <div class="homeflash montserrat {{ category }}">
+                            {{ message }}
+                        </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+            <div class="usericon">
+                <img src="/static/usericon.png">
+            </div>
+            <div class="profile">
+                <button onclick="openProfile()">{{ username }}</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="navBar">
+        <div class="tabs">
+            <a class="tablink montserrat activelink"href="/">Home</a>
+            <a class="tablink montserrat"href="/owned">Owned</a>
+            <a class="tablink montserrat"href="/about">About</a>
+            <a class="tablink montserrat"href="/buy">Buy</a>
+            <a class="tablink montserrat"href="/sell">Sell</a>
+            <a class="tablink montserrat"href="/wallet">Wallet</a>
+        </div>
+        <div class="search">
+            <a href="/quote"><img src="/static/search.png"></a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function openProfile(){
+            document.getElementById('profilesection').style.visibility = 'visible';
+            document.getElementById('profilesection').style.opacity = 1;
+        }
+        function closeProfile(){
+            document.getElementById('profilesection').style.visibility = 'hidden';
+            document.getElementById('profilesection').style.opacity = 0;
+        }
+    </script>
+
+    <div id="profilesection" class="overlay">
+        <div class="profilesection montserrat">
+            <div class="profileusername">
+                <span>&nbsp;&nbsp;{{ username }}&nbsp;&nbsp;</span>
+            </div>
+            <div class="profilechange">
+                <a href="/profile"><i class="icofont-user-male"></i> Profile</a>
+            </div>
+            <div class="profilehistory">
+                <a href="/history"><i class="icofont-history"></i> History</a>
+            </div>
+            <div class="profilelogout">
+                <a href="/logout"><i class="icofont-logout"></i> Logout</a>
+            </div>
+            <button onclick="closeProfile()"><i class="icofont-stylish-left"></i></button>
+        </div>
+    </div>
+
+    <div class="mainsection montserrat">
+        <div class="hometext">
+            <div class="makeinvesttexthome">
+                Make Investments and
+            </div>
+            <div class="tradetexthome">
+                trade
+            </div>
+            <div class="stocktexthome">
+                stocks
+            </div>
+            <div class="descriptiontexthome">
+                <p>
+                    We help you manage asset, investment, all your trade of <br/>
+                    stocks. Leave money issue with us and focus on your <br/>
+                    core business.
+                </p>
+            </div>
+        </div>
+        <div class="topstocks">
+            <div class="titlediv">
+                <div class="yourstocktexthome">
+                    <span>Your Stocks</span>
+                </div>
+                {% if not home %}
+
+                {% else %}
+                <div class="seealllinkhome">
+                    <a href="/owned">See all</a>
+                </div>
+                {% endif %}
+            </div>
+
+            {% if not home %}
+                <div class="nostockshome">
+                    <form action="/buy">
+                        <p>No stocks to show here.<br/>
+                           Buy some to start.</p>
+                        <button type="submit" name="homebuy">
+                            Buy Stocks
+                        </button>
+                    </form>
+                </div>
+            {% else %}
+                {% for row in home %}
+                    <div class="topstockbox">
+                        <div class="layeronebox">
+                            <div class="hometopsymbol">
+                                <span>{{ row.symbol }}</span>
+                                {% if row.change > 0 %}
+                                    <img src="/static/increase.png">
+                                {% elif row.change < 0 %}
+                                    <img src="/static/decrease.png">
+                                {% else %}
+                                    <img src="/static/nochange.png">
+                                {% endif %}
+                            </div>
+                            {% if row.change > 0 %}
+                            <div class="hometopprice increasecolor">
+                                <span style="font-size: 0.6em">({{ row.change }})</span>
+                                <span>{{ row.price }}</span>
+                            </div>
+                            {% elif row.change < 0 %}
+                            <div class="hometopprice decreasecolor">
+                                <span style="font-size: 0.6em">({{ row.change }})</span>
+                                <span>{{ row.price }}</span>
+                            </div>
+                            {% else %}
+                            <div class="hometopprice nochangecolor">
+                                <span style="font-size: 0.6em">({{ row.change }})</span>
+                                <span>{{ row.price }}</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="layertwobox">
+                            <span>{{ row.name }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="footerdiv montserrat">
+        Data provided for free by <a href="https://iextrading.com/developer">IEX</a>. View <a href="https://iextrading.com/api-exhibit-a/">IEX’s Terms of Use</a>.
+    </div>
+</body>
+</html>

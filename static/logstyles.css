@@ -1,0 +1,237 @@
+@font-face {
+	font-family: 'century-gothic';
+	src: url('/static/gothic/gothic.eot') format('embedded-opentype'),
+	     url('/static/gothic/gothic.woff') format('woff'),
+         url('/static/gothic/gothic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-regular-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal, 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-bold-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-bold-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-medium-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-medium-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Medium.ttf') format('truetype');
+    font-weight: medium, 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-light-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-light-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-image: url("/static/logbackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.montserrat
+{
+    font-family: 'montserrat', sans-serif;
+}
+
+.century
+{
+    font-family: 'century-gothic', sans-serif;
+}
+
+.logbrand
+{
+    color: #dfe9f8;
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    font-size: 33px;
+}
+
+.inputdiv
+{
+    width: 447px;
+    padding: 0;
+    position: absolute;
+    right: 260px;
+    top: 130px;
+}
+
+.logtitle span
+{
+    color: white;
+    padding: 7px 0px;
+    margin: 10px 0px;
+    border-bottom: 10px solid #2790bc;
+    font-weight: bold;
+    font-size: 52px;
+}
+
+.logflash
+{
+    position: absolute;
+    border-radius: 6px;
+    min-width: 367px;
+    padding: 15px 40px;
+    font-weight: bold;
+    font-size: 17px;
+    top: 100px;
+    opacity: 0.75;
+    text-align: center;
+}
+
+.danger
+{
+    background-color: #e12615;
+    color: #1a0705;
+}
+
+.success
+{
+    background-color: #62d83e;
+    color: #1b4911;
+}
+
+.warning
+{
+    background-color: #e89443;
+    color: #3b3211;
+}
+
+.primary
+{
+    background-color: #2aa5bc;
+    color: #1b173b;
+}
+
+.logusernameinput input[type=text]
+{
+    background: url("/static/usernameicon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 5px 0px;
+    border: none;
+    border-bottom: 1.5px solid white;
+    width: 400px;
+    padding-left:46px;
+    padding-bottom: 1px;
+    padding-top: 5px;
+    color: white;
+    font-family: 'montserrat', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.6px;
+    margin-top: 120px;
+}
+
+.logusernameinput input[type=text]::placeholder
+{
+    color: #6496aa;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.logusernameinput input[type=text]:focus
+{
+    outline: none;
+}
+
+.logpasswordinput input[type=password]
+{
+    background: url("/static/passwordicon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 5px 0px;
+    border: none;
+    border-bottom: 1.5px solid white;
+    width: 400px;
+    padding-left:46px;
+    padding-bottom: 1px;
+    padding-top: 5px;
+    color: white;
+    font-family: 'montserrat', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.6px;
+    margin-top: 34px;
+}
+
+.logpasswordinput input[type=password]::placeholder
+{
+    color: #6496aa;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.logpasswordinput input[type=password]:focus
+{
+    outline: none;
+}
+
+.logregisterlink
+{
+    text-align: right;
+    margin-top: 18px;
+}
+
+.logregisterlink a
+{
+    text-decoration: none;
+    color: #9db6c0;
+    font-family: 'montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.logregisterlink a:hover
+{
+    color: white;
+}
+
+.logform button
+{
+    background: transparent;
+    color: #add6f0;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    padding: 12px;
+    width: 447px;
+    border: 2px solid #2aa0cc;
+    margin-top: 45px;
+    box-shadow: 0 0 7px black;
+    cursor: pointer;
+}
+
+.logform button:focus
+{
+    outline: none;
+}
+
+.logform button:hover
+{
+    border: 2px solid #9db6c0;
+	color: #add6f0;
+	transition: all 0.25s ease;
+}

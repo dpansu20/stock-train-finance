@@ -1,0 +1,25 @@
+{% extends "alllayout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block navtab %}
+<a class="tablink montserrat"href="/">Home</a>
+<a class="tablink montserrat"href="/owned">Owned</a>
+<a class="tablink montserrat"href="/about">About</a>
+<a class="tablink montserrat activelink"href="/buy">Buy</a>
+<a class="tablink montserrat"href="/sell">Sell</a>
+<a class="tablink montserrat"href="/wallet">Wallet</a>
+{% endblock %}
+
+{% block main %}
+<div class="buyform">
+    <form action="/buy" method="post">
+        <input autocomplete="off" autofocus class="buysymbol" name="symbol" type="text" placeholder="Symbol"><br/>
+        <input autocomplete="off" autofocus class="buyshares" name="shares" placeholder="Shares" type="number" min="1">
+        <button class="buybutton" type="submit">Buy</button>
+    </form>
+</div>
+<img src="static/cart.png" class="buybackground">
+{% endblock %}

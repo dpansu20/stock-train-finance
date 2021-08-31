@@ -1,0 +1,526 @@
+@font-face {
+	font-family: 'century-gothic';
+	src: url('static/gothic/gothic.eot') format('embedded-opentype'),
+	     url('static/gothic/gothic.woff') format('woff'),
+         url('static/gothic/gothic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-regular-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal, 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-bold-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-bold-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-medium-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-medium-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Medium.ttf') format('truetype');
+    font-weight: medium, 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/static/montserrat/montserrat-light-webfont.woff2') format('woff2'),
+         url('/static/montserrat/montserrat-light-webfont.woff') format('woff'),
+         url('/static/montserrat/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-image: url("/static/homebackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom center;
+}
+
+.montserrat
+{
+    font-family: 'montserrat', sans-serif;
+}
+
+.century
+{
+    font-family: 'century-gothic', sans-serif;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.brand
+{
+    font-size: 55px;
+    color: #3d82e9;
+    padding: 0;
+}
+
+.rightheader
+{
+    height: 65px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.homeflash
+{
+    border-radius: 5px;
+    padding: 14px 120px;
+    margin-top: 15px;
+    margin-right: 25px;
+    font-family: 'montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    opacity: 0.75;
+}
+
+.danger
+{
+    background-color: #c10605;
+    color: #1a0705;
+}
+
+.success
+{
+    background-color: #62d83e;
+    color: #1b4911;
+}
+
+.warning
+{
+    background-color: #e89443;
+    color: #3b3211;
+}
+
+.primary
+{
+    background-color: #2aa5bc;
+    color: #1b173b;
+}
+
+.usericon
+{
+    padding: 17px 0px;
+    display: inline-block;
+}
+
+.usericon img
+{
+    height: 45px;
+}
+
+.profile button
+{
+    font-size: 30px;
+    font-weight: bold;
+	font-family: 'montserrat', sans-serif;;
+    color: #3d82e9;
+    padding-top: 28px;
+	margin-left: 4.5px;
+    text-decoration: none;
+	background: none;
+	border: none;
+}
+
+.profile button:hover
+{
+    color: #c1c4db;
+}
+
+.profile button:focus
+{
+	outline: none;
+}
+
+.navBar
+{
+    display: flex;
+    justify-content: space-between;
+    width: 82%;
+    margin-top: 20px;
+    margin-bottom: 17px;
+    margin-left: 6%;
+    margin-right: 6%;
+    border-radius: 5px;
+    background-color: #05070f;
+    padding: 9px 3%;
+    opacity: 0.7;
+}
+
+.tabs a
+{
+    text-decoration: none;
+}
+
+.tablink
+{
+    font-weight: bold;
+    color: #7f8999;
+    height: 20px;
+    padding-right: 30px;
+    padding-top: 11.5px;
+    display: inline-block;
+}
+
+.activelink
+{
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #fff;
+    height: 24px;
+    padding-right: 30px;
+    padding-top: 7.5px;
+    display: inline-block;
+}
+
+.tablink:hover
+{
+    color: #fff;
+    font-size: 1.3em;
+    padding-top: 3.5px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+.search img
+{
+    height: 30px;
+}
+
+.overlay
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+	z-index: 100;
+	transition: all 0.1s ease-in-out;
+}
+
+.profilesection
+{
+    background-color: #06090c;
+	width: auto;
+	height: 100vh;
+    position: absolute;
+	right: 0px;
+}
+
+.profilesection .profileusername
+{
+	background: url("/static/profilepattern.png"), #123;
+	background-size: 25vh;
+	padding: 5vh 0;
+}
+
+.profilesection .profileusername span
+{
+	font-size: 14vh;
+	font-weight: bold;
+	color: #3d82d9;
+	text-align: center;
+	text-shadow: 0 0 60px black;
+}
+
+.profilechange
+{
+	margin-top: 16vh;
+	margin-left: 14%;
+}
+
+.profilechange a
+{
+	text-decoration: none;
+	color: #456;
+	font-size: 4.5vh;
+}
+
+.profilechange a:hover
+{
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+
+.profilehistory
+{
+	margin-top: 1vh;
+	margin-left: 14%;
+}
+
+.profilehistory a
+{
+	text-decoration: none;
+	color: #456;
+	font-size: 4.5vh;
+}
+
+.profilehistory a:hover
+{
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+
+.profilelogout
+{
+	margin-top: 5vh;
+	margin-left: 14%;
+}
+
+.profilelogout a
+{
+	text-decoration: none;
+	color: #456;
+	font-size: 4.5vh;
+}
+
+.profilelogout a:hover
+{
+	font-weight: bold;
+	transition: all 0.2s ease;
+}
+
+.profilesection button
+{
+    position: absolute;
+    bottom: 3vh;
+    right: 5%;
+    transition: all 200ms;
+    font-size: 24vh;
+    color: #456;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.profilesection button:hover
+{
+    font-size: 25vh;
+}
+
+.profilesection button:focus
+{
+	outline: none;
+}
+
+.mainsection
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 88%;
+    margin-left: 6%;
+}
+
+.makeinvesttexthome
+{
+    position: absolute;
+    font-weight: bold;
+    font-size: 34px;
+    letter-spacing: 1.5px;
+    word-spacing: 8px;
+    color: #7580d4;
+    top: 280px;
+}
+
+.tradetexthome
+{
+    position: absolute;
+    font-weight: bold;
+    font-size: 150px;
+    color: #e1e4fb;
+    top: 315px;
+}
+
+.stocktexthome
+{
+    position: absolute;
+    font-weight: bold;
+    font-size: 80px;
+    letter-spacing: 2.5px;
+    color: #e8b463;
+    top: 370px;
+    left: calc(6% + 440px);
+}
+
+.descriptiontexthome
+{
+    position: absolute;
+    font-size: 24px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    color: #8f96a1;
+    top: 490px;
+}
+
+.titlediv
+{
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    border-radius: 5px;
+    background-color: #05070f;
+    padding: 10px 4%;
+    opacity: 0.7;
+}
+
+.yourstocktexthome
+{
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #fff;
+    height: 24px;
+	padding-top: 4.5px;
+    padding-right: 30px;
+    display: inline-block;
+}
+
+.seealllinkhome a
+{
+    color: #7f8999;
+    height: 20px;
+    padding-top: 8.5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.seealllinkhome a:hover
+{
+	color: #e1e4fb;
+}
+
+.nostockshome
+{
+    width: 92%;
+    border-radius: 5px;
+    background-color: #05070f;
+    padding: 8px 4%;
+    opacity: 0.7;
+    margin-top: 17px;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.nostockshome button
+{
+    border-radius: 2px;
+    border: 1px solid #9fa6c1;
+    background-color: #9fa6c1;
+    padding: 5px 3.5%;
+    color: #000;
+    margin-bottom: 8px;
+    font-size: 0.75em;
+    font-weight: bold;
+    font-family: 'montserrat', sans-serif;
+}
+
+.nostockshome button:hover
+{
+    background-color: #fff;
+}
+
+.topstockbox
+{
+    width: 92%;
+    border-radius: 5px;
+    background-color: #070913;
+    padding: 9px 4%;
+    opacity: 0.8;
+    margin-top: 17px;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.layeronebox
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0px;
+}
+
+.hometopsymbol
+{
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+.hometopsymbol img
+{
+    height: 25px;
+    margin-top: 5px;
+}
+
+.hometopprice
+{
+    font-size: 1.7em;
+	font-weight: 500;
+}
+
+.increasecolor
+{
+    color: #66ea32;
+}
+
+.decreasecolor
+{
+    color: #ea4832;
+}
+
+.nochangecolor
+{
+    color: #ffcc33;
+}
+
+.layertwobox
+{
+	margin-top: 8px;
+	border-top: 0.5px solid #0d161d;
+	padding: 2.5px 0px;
+}
+
+.footerdiv
+{
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #e1e4fb;
+    letter-spacing: 1px;
+	padding-bottom: 20px;
+	padding-top: 10px;
+}
+
+.footerdiv a
+{
+    color: #607ac5;
+}

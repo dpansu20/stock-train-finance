@@ -1,0 +1,109 @@
+{% extends "alllayout.html" %}
+
+{% block script %}
+    <script type="text/javascript">
+        function showuserform() {
+            document.getElementById("userundropped").style.display = 'none';
+            document.getElementById("userdropped").style.display = 'block';
+            document.getElementById("userform").style.display = 'block';
+        }
+        function closeuserform() {
+            document.getElementById("userundropped").style.display = 'block';
+            document.getElementById("userdropped").style.display = 'none';
+            document.getElementById("userform").style.display = 'none';
+        }
+        function showpassform() {
+            document.getElementById("passundropped").style.display = 'none';
+            document.getElementById("passdropped").style.display = 'block';
+            document.getElementById("passform").style.display = 'block';
+        }
+        function closepassform() {
+            document.getElementById("passundropped").style.display = 'block';
+            document.getElementById("passdropped").style.display = 'none';
+            document.getElementById("passform").style.display = 'none';
+        }
+        function showdelform() {
+            document.getElementById("delundropped").style.display = 'none';
+            document.getElementById("deldropped").style.display = 'block';
+            document.getElementById("delform").style.display = 'block';
+        }
+        function closedelform() {
+            document.getElementById("delundropped").style.display = 'block';
+            document.getElementById("deldropped").style.display = 'none';
+            document.getElementById("delform").style.display = 'none';
+        }
+    </script>
+{% endblock %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block navtab %}
+<a class="tablink montserrat" href="/">Home</a>
+<a class="tablink montserrat" href="/owned">Owned</a>
+<a class="tablink montserrat" href="/about">About</a>
+<a class="tablink montserrat" href="/buy">Buy</a>
+<a class="tablink montserrat" href="/sell">Sell</a>
+<a class="tablink montserrat" href="/wallet">Wallet</a>
+<a class="tablink montserrat activelink" href="/profile">Profile</a>
+{% endblock %}
+
+{% block main %}
+<div class="changeprofile">
+    <span class="changelabel">You can change your Username and Password here.</span>
+    <div class="changeusername">
+        <div id="userundropped" class="userundropped">
+            <button onclick="showuserform()"><i class="icofont-hand-drawn-right"></i> Change Username</button>
+        </div>
+        <div id="userdropped" class="userdropped">
+            <button onclick="closeuserform()"><i class="icofont-hand-drawn-down"></i> Change Username</button>
+        </div>
+        <div id="userform" class="userform">
+            <form action="/username" method="post">
+                <label for="newuser">Enter the new Username you would like to keep :</label><br/>
+                <input autocomplete="off" autofocus class="newuser" name="newuser" placeholder="New Username" type="text"><br/>
+                <label for="userpass">Enter your Password :</label><br/>
+                <input class="userpass" name="userpass" placeholder="Password" type="password">
+                <button class="changebutton" type="submit">Change</button>
+            </form>
+        </div>
+    </div>
+    <div class="changepassword">
+        <div id="passundropped" class="passundropped">
+            <button onclick="showpassform()"><i class="icofont-hand-drawn-right"></i> Change Password</button>
+        </div>
+        <div id="passdropped" class="passdropped">
+            <button onclick="closepassform()"><i class="icofont-hand-drawn-down"></i> Change Password</button>
+        </div>
+        <div id="passform" class="passform">
+            <form action="/password" method="post">
+                <label for="oldpass">Enter the old Password :</label><br/>
+                <input class="oldpass" name="oldpass" placeholder="Old Password" type="password"><br/>
+                <label for="newpass">Enter the new Password :</label><br/>
+                <input class="newpass" name="newpass" placeholder="New Password" type="password"><br/>
+                <label for="newcon">Confirm the new Password :</label><br/>
+                <input class="newcon" name="newcon" placeholder="New Password (Again)" type="password">
+                <button class="changebutton" type="submit">Change</button>
+            </form>
+        </div>
+    </div>
+    <div class="deleteaccount">
+        <div id="delundropped" class="delundropped">
+            <button onclick="showdelform()"><i class="icofont-hand-drawn-right"></i> Delete Account</button>
+        </div>
+        <div id="deldropped" class="deldropped">
+            <button onclick="closedelform()"><i class="icofont-hand-drawn-down"></i> Delete Account</button>
+        </div>
+        <div id="delform" class="delform">
+            <form action="/delete" method="post">
+                <label for="delpass">Enter your Password :</label><br/>
+                <input class="delpass" name="delpass" placeholder="Password" type="password">
+
+                <button class="changebutton" type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<img src="static/setting.png" class="walletbackground">
+{% endblock %}
