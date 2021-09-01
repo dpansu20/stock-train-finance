@@ -29,10 +29,11 @@
 ##### Checkout the original implementation [here](https://finance.cs50.net)
 # 
 # Get it Running
-
+<!-- 
 ##### Get the required [packages](/requirements.txt)
 ##### After that, run the following command..
 ```
 $ export API_KEY=pk_3caccf7ef7e045c9976790ce1def9e03 
 $ flask run
 ```
+ -->
